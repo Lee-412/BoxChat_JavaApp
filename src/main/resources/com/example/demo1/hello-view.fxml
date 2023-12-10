@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="BOTTOM_LEFT" prefHeight="600.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox prefHeight="30.0" prefWidth="360.0">
+      <children>
+          <Button mnemonicParsing="false" text="exit" HBox.hgrow="ALWAYS" />
+         <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" />
+         <Button mnemonicParsing="false" text="Name" />
+          <Region HBox.hgrow="ALWAYS" />
+          <Button mnemonicParsing="false" text="call" />
+          <Button mnemonicParsing="false" text="video" />
+      </children>
+   </HBox>
+
+    <ScrollPane prefHeight="460.0" prefWidth="360.0" VBox.vgrow="ALWAYS">
+        <VBox fx:id="chatArea" alignment="BOTTOM_LEFT" spacing="5.0">
+        </VBox>
+    </ScrollPane>
+
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+      <Button mnemonicParsing="false" text="i" />
+      <Button mnemonicParsing="false" text="vo" />
+        <TextField fx:id="messageInput" prefHeight="25.0" prefWidth="210.0" promptText="Type a message..." HBox.hgrow="ALWAYS" />
+        <Button onAction="#sendMessage" text="S" />
+    </HBox>
+</VBox>
