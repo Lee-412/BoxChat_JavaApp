@@ -5,30 +5,85 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="BOTTOM_LEFT" prefHeight="600.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
+<VBox fx:id="boxChat" alignment="BOTTOM_LEFT" prefHeight="600.0" prefWidth="400.0" spacing="10.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <HBox prefHeight="30.0" prefWidth="360.0">
+   <HBox fx:id="yourHBoxId" prefHeight="30.0" prefWidth="360.0" stylesheets="@style.css">
       <children>
-          <Button mnemonicParsing="false" text="exit" HBox.hgrow="ALWAYS" />
-         <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" />
-         <Button mnemonicParsing="false" text="Name" />
-          <Region HBox.hgrow="ALWAYS" />
-          <Button mnemonicParsing="false" text="call" />
-          <Button mnemonicParsing="false" text="video" />
+          <Button fx:id="backButton" mnemonicParsing="false" onAction="#clickBack" style="style.css" HBox.hgrow="ALWAYS">
+              <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0">
+                      <image>
+                          <Image url="@image/back.jpg" />
+                      </image>
+                  </ImageView>
+              </graphic>
+          </Button>
+         <Button mnemonicParsing="false" onAction="#clickUser">
+            <graphic>
+              <ImageView fitHeight="49.0" fitWidth="51.0">
+                  <image>
+                      <Image url="@image/user.jpg" />
+                  </image>
+              </ImageView>
+            </graphic>
+         </Button>
+          <Button fx:id="NameUser" onAction="#clickUser" prefHeight="44.0" prefWidth="177.0" style="NameUser" text="Name User                              " HBox.hgrow="ALWAYS" />
+          <Button mnemonicParsing="false" onAction="#clickCall">
+            <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="48.0">
+                      <image>
+                          <Image url="@image/callx.png" />
+                      </image>
+                  </ImageView>
+            </graphic>
+         </Button>
+          <Button mnemonicParsing="false" onAction="#clickCallVideo">
+              <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="48.0">
+                      <image>
+                          <Image url="@image/callVideo.jpg" />
+                      </image>
+                  </ImageView>
+              </graphic>
+          </Button>
       </children>
    </HBox>
 
-    <ScrollPane prefHeight="460.0" prefWidth="360.0" VBox.vgrow="ALWAYS">
-        <VBox fx:id="chatArea" alignment="BOTTOM_LEFT" spacing="5.0">
-        </VBox>
+    <ScrollPane fx:id="scrollPanes" prefHeight="398.0" prefWidth="360.0" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+        <VBox fx:id="chatArea" alignment="BOTTOM_LEFT" spacing="5.0" />
     </ScrollPane>
 
-    <HBox alignment="CENTER_LEFT" spacing="10.0">
-      <Button mnemonicParsing="false" text="i" />
-      <Button mnemonicParsing="false" text="vo" />
-        <TextField fx:id="messageInput" prefHeight="25.0" prefWidth="210.0" promptText="Type a message..." HBox.hgrow="ALWAYS" />
-        <Button onAction="#sendMessage" text="S" />
+
+    <HBox fx:id="yourHBoxIdBot" prefHeight="15.0" prefWidth="360.0" stylesheets="@style.css">
+        <children>
+            <Button mnemonicParsing="false" onAction="#clickSend_Image">
+            <graphic>
+                <ImageView fitHeight="29.0" fitWidth="32">
+                    <image>
+                        <Image url="@image/send_iamge.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+            <Button mnemonicParsing="false" onAction="#clickVoice">
+            <graphic>
+                    <ImageView fitHeight="32.0" fitWidth="32">
+                        <image>
+                            <Image url="@image/voide.png" />
+                        </image>
+                    </ImageView>
+            </graphic></Button>
+            <TextArea fx:id="messageInput" prefHeight="13.0" prefWidth="257.0" promptText="Type a message..." wrapText="true" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#sendMessage">
+            <graphic>
+                    <ImageView fitHeight="29.0" fitWidth="39.0">
+                        <image>
+                            <Image url="@image/send.png" />
+                        </image>
+                    </ImageView>
+            </graphic></Button>
+        </children>
     </HBox>
 </VBox>

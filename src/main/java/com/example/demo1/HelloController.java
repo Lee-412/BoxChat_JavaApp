@@ -1,42 +1,110 @@
 package com.example.demo1;
-
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.*;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class HelloController {
+public class HelloController implements Initializable {
     @FXML
     private VBox chatArea;
 
     @FXML
-    private TextField messageInput;
+    private TextArea messageInput;
+
+    @FXML
+    private ScrollPane scrollPanes;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String text = "                                                                                                         ";
+        Label newLable = new Label(text);
+        newLable.setMaxWidth(500);
+        newLable.setWrapText(true);
+        newLable.setAlignment(Pos.CENTER_RIGHT);
+        chatArea.getChildren().add(newLable);
+    }
 
     public void sendMessage() {
+
         String messageText = messageInput.getText().trim();
-        if (!messageText.isEmpty()) {
-            VBox message = createMessage(messageText);
-            chatArea.getChildren().add(message);
-            messageInput.clear();
-        }
+
+        Label newMessage = new Label(messageText);
+        newMessage.getStyleClass().add("message-label");
+        newMessage.setMaxWidth(300);
+        newMessage.setWrapText(true);
+
+        HBox messageContainer = new HBox(newMessage);
+        messageContainer.setAlignment(Pos.CENTER_RIGHT);
+        chatArea.getChildren().add(messageContainer);
+        messageInput.clear();
+
+
+        Label botMessage = new Label("Thank you for contacting us, we will respond later");
+        botMessage.getStyleClass().add("message-label-bot");
+        botMessage.setMaxWidth(300);
+        botMessage.setWrapText(true);
+
+        HBox botMessageContainer = new HBox(botMessage);
+        botMessageContainer.setAlignment(Pos.CENTER_LEFT);
+
+        chatArea.getChildren().add(botMessageContainer);
+
+        chatArea.heightProperty().addListener((observable, oldValue, newValue) -> {
+            scrollPanes.setVvalue(scrollPanes.getVmax());
+            scrollPanes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+            scrollPanes.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        });
+}
+    public void clickCallVideo (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat Video Call ");
+        alert.setHeaderText("Box Chat Video Call");
+        alert.setContentText("Box Chat Video Call");
+        alert.showAndWait();
     }
-    private VBox createMessage(String text) {
-        Text message = new Text(text);
-        message.setWrappingWidth(250);
-        message.setStyle("-fx-background-color: #DCF8C6; -fx-padding: 5px; -fx-border-radius: 5px;");
+    public void clickCall (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat Call ");
+        alert.setHeaderText("Box Chat Call");
+        alert.setContentText("Box Chat Call");
+        alert.showAndWait();
+    }
 
-        LocalDateTime currentTime = LocalDateTime.now();
-        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm"));
+    public void clickSend_Image (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat SendImage ");
+        alert.setHeaderText("Box Chat SendImage");
+        alert.setContentText("Box Chat SendImage");
+        alert.showAndWait();
+    }
+    public void clickVoice (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat Voice ");
+        alert.setHeaderText("Box Chat Voice");
+        alert.setContentText("Box Chat Voice");
+        alert.showAndWait();
+    }
 
-        Text timeStamp = new Text("[" + formattedTime + "] ");
-        timeStamp.setStyle("-fx-font-size: 10px; -fx-fill: gray;");
+    public void clickUser (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat Infomation User ");
+        alert.setHeaderText("Box Chat Infomation User");
+        alert.setContentText("Box Chat Infomation User");
+        alert.showAndWait();
+    }
 
-        VBox messageContainer = new VBox();
-        messageContainer.getChildren().addAll(timeStamp, message);
-
-        return messageContainer;
+    public void clickBack (){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("BoxChat home ");
+        alert.setHeaderText("Box Chat home ");
+        alert.setContentText("Box Chat home");
+        alert.showAndWait();
     }
 }

@@ -1,0 +1,76 @@
+.custom-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+.backButton {
+-fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+
+#yourHBoxId Button {
+
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+#yourHBoxIdBot Button {
+      -fx-background-color: White;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+#yourHBoxIdBot  {
+
+
+}
+
+
+#boxChat {
+     -fx-background-color: White;
+}
+
+.NameUser {
+    -fx-background-color: White;
+}
+
+.message-text {
+    -fx-background-color: White;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+
+}
+.message-label {
+    -fx-background-color: #007FFF;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-font-weight: bold;
+    -fx-alignment: right;
+
+}
+.message-label-bot {
+ -fx-background-color: pink;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+}
+.scroll-pane {
+-fx-background-color: rgb(255, 255, 204);
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
