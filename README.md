@@ -2,7 +2,7 @@
 
 BoxChat là một ứng dụng JavaFX đơn giản cung cấp giao diện người dùng cho việc trò chuyện và gửi tin nhắn.
 
-<img src="https://imgur.com/a/euYfkss">
+![demo.png](demo.png)
 
 
 ## Cài đặt
