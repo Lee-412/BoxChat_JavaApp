@@ -101,10 +101,6 @@ public class HelloController implements Initializable {
     }
 
     public void clickBack (){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("BoxChat home ");
-        alert.setHeaderText("Box Chat home ");
-        alert.setContentText("Box Chat home");
-        alert.showAndWait();
+
     }
 }
