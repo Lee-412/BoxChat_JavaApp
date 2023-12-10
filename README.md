@@ -2,6 +2,8 @@
 
 BoxChat là một ứng dụng JavaFX đơn giản cung cấp giao diện người dùng cho việc trò chuyện và gửi tin nhắn.
 
+![alt](https://drive.google.com/file/d/15iul_MQ9WstTg13JzhMrLvumwaWYvpwv/view?usp=drive_link)
+
 ## Cài đặt
 
 Để chạy BoxChat, bạn cần có môi trường phát triển Java và JavaFX.
